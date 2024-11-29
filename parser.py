@@ -119,8 +119,19 @@ def run_audit(site_url):
     return results
 
 # Gradio UI components
-site_url_input = gr.Textbox(label="Website URL", placeholder="Enter the URL of the website to audit", lines=1)
-audit_results_output = gr.Textbox(label="Audit Results", placeholder="Audit results will appear here", lines=20, max_lines=30, interactive=False)
+site_url_input = gr.Textbox(
+    label="Website URL", 
+    placeholder="Enter the URL of the website to audit", 
+    lines=1
+)
+
+audit_results_output = gr.Textbox(
+    label="Audit Results", 
+    placeholder="Audit results will appear here", 
+    lines=20, 
+    max_lines=30, 
+    interactive=False
+)
 
 # Create Gradio interface
 iface = gr.Interface(
