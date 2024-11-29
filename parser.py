@@ -46,6 +46,7 @@ def fetch_json_from_api(site_url, api_key):
     except json.JSONDecodeError:
         return "Failed to decode JSON. Please check the API response."
 
+# Initialize Groq client without proxies argument
 client = Groq(api_key=GROQ_API_KEY)
 
 def generate_questions(query: str, num_questions: int = 1) -> str:
@@ -97,7 +98,7 @@ def parse_lighthouse_json(site_url, api_key):
             )
         else:
             total_time_saved_manual += savings
-            unknown_question = generate_questions(audit_data.get("title"))
+            unknown_question = generate_questions(audit_data.get('title'))
             results.append(
                 f"{audit_data.get('title')} ({priority} priority)\n"
                 f"Potential Savings: {savings:.2f} ms\nGenerated Question:\n- {unknown_question}\n"
