@@ -2,4 +2,3 @@ gradio
 requests 
 python-dotenv
 groq
-python-dotenv
